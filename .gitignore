@@ -1,8 +1,5 @@
 # Datos pesados
-data/raw/*
-
-# Mantener estructura de carpetas
-!data/raw/.gitkeep
+data/raw/*.csv
 
 # Python
 __pycache__/
