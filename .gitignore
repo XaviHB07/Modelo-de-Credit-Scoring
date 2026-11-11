@@ -1,3 +1,16 @@
+# Datos pesados
+data/raw/*
+
+# Mantener estructura de carpetas
+!data/raw/.gitkeep
+
+# Python
 __pycache__/
-.ipynb_checkpoints/
 *.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Archivos temporales
+*.log
+.DS_Store

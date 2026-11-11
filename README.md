@@ -8,9 +8,22 @@ Se compararon regresión logística, random forest y LightGBM (con Optuna), y el
 
 En el holdout el AUC es 0,838 (IC 95%: 0,824–0,849), con KS de 0,50 y un lift de 4,3 en el decil de mayor riesgo. En validación cruzada la logística da 0,819, el random forest 0,816 y LightGBM 0,833. El RCC explica cerca del 73% de la ganancia del modelo, el Censo 16%, SE 6% y SUNAT 5%. Las métricas salen de una submuestra de 40 mil clientes (32 mil para ajustar y 8 mil de holdout) y el modelo final se entrenó con 150 mil; en `reports/` están las métricas, las figuras y el `submission.csv`.
 
-Para correrlo hay que instalar las dependencias, copiar los archivos de la competencia (csv o parquet) en `data/raw` y ejecutar los notebooks en orden, del 00 al 05, o bien el pipeline por consola:
+## Datos
 
+Para facilitar la descarga y el uso del repositorio, se incluyen los datasets procesados en formato Parquet (`.parquet`), que permiten almacenar y trabajar con los datos de manera más eficiente y ocupando menos espacio.
+
+Los archivos originales (`.csv`) no se incluyen en este repositorio debido a su tamaño. Se pueden descargar directamente desde la competencia original:
+
+https://www.kaggle.com/competitions/interbank20
+
+Los archivos originales deben colocarse en `data/raw/`, mientras que los archivos procesados se encuentran en `data/processed/`.
+
+## Ejecución
+
+Para ejecutar el proyecto hay que instalar las dependencias:
 ```
 pip install -r requirements.txt
 python scripts/run_pipeline.py
 ```
+
+Si se desea reproducir todo el procesamiento desde cero, se deben descargar los archivos originales de Kaggle, colocarlos en data/raw/ y ejecutar los notebooks en orden, del 00 al 05, o bien el pipeline por consola: python scripts/run_pipeline.py
